@@ -1789,7 +1789,7 @@ selected_template_meta = TEMPLATE_METADATA.get(
         "version": "v3.2",
         "embeddings": embedder_label,
         "vector_store": store_backend,
-        "llm_detail": llm_status["detail"],
+        "llm_detail": llm_status["detail"] if llm_status else "LLM Offline",
     },
 )
 
