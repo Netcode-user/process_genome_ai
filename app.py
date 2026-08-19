@@ -1870,7 +1870,12 @@ render_html(
             border-radius:11px;
 
             background:
-                {llm_status["color"]}12;
+                status_color = "#6B7280"
+
+        if isinstance(llm_status, dict):
+        
+        status_color = llm_status.get("color", "#6B7280")
+
 
             border:
                 1px solid
