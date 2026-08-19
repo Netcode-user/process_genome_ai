@@ -171,11 +171,15 @@ def apply_template_impact_to_trend(trend_df):
 
 # =============================================================================
 # SAFE HTML RENDERER
-# ========================================================================
+# =============================================================================
+
 def render_html(html: str):
+    """
+    Render custom HTML safely.
+    Uses st.html where available and markdown fallback otherwise.
+    """
+
     html = textwrap.dedent(html).strip()
-    st.markdown(html, unsafe_allow_html=True)
-    return None
 
     try:
         st.html(html)
@@ -1965,13 +1969,11 @@ if page == "🏠 Command Center":
 
 
     st.markdown(
-    """
-    <div class="section-label">
-        ENTERPRISE COMMAND CENTER
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
+        '<div class="section-label'>
+        'ENTERPRISE COMMAND CENTER'
+        '</div>',
+        unsafe_allow_html=True,
+    )
 
     st.markdown("## Explore Process Intelligence")
     st.caption("Select a feature to open its full workspace.")
