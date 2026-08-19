@@ -1159,15 +1159,7 @@ def get_llm_status(rag):
             "icon": "🟢",
         }
 
-    return {
-        "online": False,
-        "label": "OFFLINE",
-        "detail": "No LLM Connected",
-        "color": ORANGE,
-        "icon": "🟠",
-    }
-
-
+    
 def render_llm_indicator(rag):
 
     status = get_llm_status(rag)
@@ -1623,7 +1615,7 @@ st.sidebar.markdown("---")
 st.sidebar.caption(
     "✅ Anthropic Connected"
     if os.getenv("ANTHROPIC_API_KEY")
-    else "❌ Anthropic Not Connected"
+    
 )
 
 
