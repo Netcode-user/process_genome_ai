@@ -1728,8 +1728,7 @@ st.sidebar.caption(
 
 st.sidebar.caption(
     "✅ Anthropic Connected"
-    if os.getenv("ANTHROPIC_API_KEY")
-    else "❌ Anthropic Not Connected"
+   
 )
 
 llm_backend = getattr(
