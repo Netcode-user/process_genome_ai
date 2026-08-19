@@ -1159,7 +1159,15 @@ def get_llm_status(rag):
             "icon": "🟢",
         }
 
-    
+    return {
+        "online": False,
+        "label": "OFFLINE",
+        "detail": "No LLM Connected",
+        "color": ORANGE,
+        "icon": "🟠",
+    }
+
+
 def render_llm_indicator(rag):
 
     status = get_llm_status(rag)
@@ -1614,7 +1622,10 @@ render_html(
 st.sidebar.markdown("---")
 st.sidebar.caption(
     "✅ Anthropic Connected"
+    if os.getenv("ANTHROPIC_API_KEY")
+    else "❌ Anthropic Not Connected"
 )
+
 
 # =============================================================================
 # NAVIGATION
@@ -1728,7 +1739,8 @@ st.sidebar.caption(
 
 st.sidebar.caption(
     "✅ Anthropic Connected"
-   
+    if os.getenv("ANTHROPIC_API_KEY")
+    else "❌ Anthropic Not Connected"
 )
 
 llm_backend = getattr(
@@ -1789,7 +1801,7 @@ selected_template_meta = TEMPLATE_METADATA.get(
         "version": "v3.2",
         "embeddings": embedder_label,
         "vector_store": store_backend,
-        "llm_detail": llm_status["detail"] if llm_status else "LLM Offline",
+        "llm_detail": llm_status["detail"],
     },
 )
 
@@ -1870,16 +1882,11 @@ render_html(
             border-radius:11px;
 
             background:
-                status_color = "#6B7280"
-
-        if isinstance(llm_status, dict):
-        
-        status_color = llm_status.get("color", "#6B7280")
-
+                {llm_status["color"]}12;
 
             border:
                 1px solid
-                {llm_status.get("color", "#6B7280")}45;;
+                {llm_status["color"]}45;
         ">
 
             <div style="
