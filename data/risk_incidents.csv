@@ -1,0 +1,43 @@
+incident_id,sop_id,step_no,step_name,risk_type,severity,detected_on,description,resolved
+RSK-1001,SOP-LU-001,13,Final Approval & Booking,SLA Breach,Low,2026-06-24,Anomalous pattern detected at 'Final Approval & Booking' during automated risk scan.,False
+RSK-1002,SOP-LU-001,11,Document Stipulation Collection,Fraud Indicator,High,2026-06-10,Anomalous pattern detected at 'Document Stipulation Collection' during automated risk scan.,False
+RSK-1003,SOP-LU-001,11,Document Stipulation Collection,Compliance Breach,Medium,2026-07-18,Anomalous pattern detected at 'Document Stipulation Collection' during automated risk scan.,False
+RSK-1004,SOP-LU-001,14,Disbursement Instruction,Compliance Breach,Low,2026-05-13,Anomalous pattern detected at 'Disbursement Instruction' during automated risk scan.,False
+RSK-1005,SOP-LU-001,14,Disbursement Instruction,Fraud Indicator,High,2026-08-01,Anomalous pattern detected at 'Disbursement Instruction' during automated risk scan.,True
+RSK-1006,SOP-LU-001,10,Conditional Approval Decision,SLA Breach,Low,2026-07-07,Anomalous pattern detected at 'Conditional Approval Decision' during automated risk scan.,False
+RSK-1007,SOP-LU-001,13,Final Approval & Booking,Data Quality Issue,High,2026-06-17,Anomalous pattern detected at 'Final Approval & Booking' during automated risk scan.,False
+RSK-1008,SOP-LU-001,11,Document Stipulation Collection,Unauthorized Step Bypass,Medium,2026-06-30,Anomalous pattern detected at 'Document Stipulation Collection' during automated risk scan.,False
+RSK-1009,SOP-LU-001,11,Document Stipulation Collection,SLA Breach,Low,2026-07-21,Anomalous pattern detected at 'Document Stipulation Collection' during automated risk scan.,True
+RSK-1010,SOP-LU-001,11,Document Stipulation Collection,Valuation Anomaly,Medium,2026-05-06,Anomalous pattern detected at 'Document Stipulation Collection' during automated risk scan.,False
+RSK-1011,SOP-LU-001,11,Document Stipulation Collection,Data Quality Issue,Medium,2026-07-17,Anomalous pattern detected at 'Document Stipulation Collection' during automated risk scan.,False
+RSK-1012,SOP-LU-001,12,Final Compliance Sign-off,SLA Breach,Medium,2026-05-11,Anomalous pattern detected at 'Final Compliance Sign-off' during automated risk scan.,False
+RSK-1013,SOP-LU-001,15,Post-Disbursement Audit Tagging,Valuation Anomaly,Critical,2026-06-30,Anomalous pattern detected at 'Post-Disbursement Audit Tagging' during automated risk scan.,False
+RSK-1014,SOP-LU-001,15,Post-Disbursement Audit Tagging,SLA Breach,Low,2026-06-19,Anomalous pattern detected at 'Post-Disbursement Audit Tagging' during automated risk scan.,False
+RSK-1015,SOP-LU-001,4,Income & Employment Verification,Unauthorized Step Bypass,High,2026-07-06,Anomalous pattern detected at 'Income & Employment Verification' during automated risk scan.,False
+RSK-1016,SOP-LU-001,9,Manual Underwriting Review,Compliance Breach,Low,2026-07-03,Anomalous pattern detected at 'Manual Underwriting Review' during automated risk scan.,False
+RSK-1017,SOP-LU-001,14,Disbursement Instruction,Data Quality Issue,High,2026-07-10,Anomalous pattern detected at 'Disbursement Instruction' during automated risk scan.,True
+RSK-1018,SOP-LU-001,15,Post-Disbursement Audit Tagging,Data Quality Issue,Medium,2026-05-15,Anomalous pattern detected at 'Post-Disbursement Audit Tagging' during automated risk scan.,False
+RSK-1019,SOP-LU-001,9,Manual Underwriting Review,Fraud Indicator,Low,2026-05-28,Anomalous pattern detected at 'Manual Underwriting Review' during automated risk scan.,False
+RSK-1020,SOP-LU-001,12,Final Compliance Sign-off,Valuation Anomaly,Low,2026-06-25,Anomalous pattern detected at 'Final Compliance Sign-off' during automated risk scan.,True
+RSK-1021,SOP-LU-001,3,Credit Bureau Pull,Data Quality Issue,Critical,2026-06-11,Anomalous pattern detected at 'Credit Bureau Pull' during automated risk scan.,False
+RSK-1022,SOP-LU-001,4,Income & Employment Verification,Data Quality Issue,High,2026-07-25,Anomalous pattern detected at 'Income & Employment Verification' during automated risk scan.,False
+RSK-1023,SOP-LU-001,2,KYC & Identity Verification,Valuation Anomaly,Medium,2026-07-08,Anomalous pattern detected at 'KYC & Identity Verification' during automated risk scan.,False
+RSK-1024,SOP-LU-001,8,Automated Credit Scoring,SLA Breach,Low,2026-07-28,Anomalous pattern detected at 'Automated Credit Scoring' during automated risk scan.,True
+RSK-1025,SOP-LU-001,15,Post-Disbursement Audit Tagging,Compliance Breach,Medium,2026-07-16,Anomalous pattern detected at 'Post-Disbursement Audit Tagging' during automated risk scan.,False
+RSK-1026,SOP-LU-001,6,Collateral Valuation,Valuation Anomaly,Medium,2026-07-31,Anomalous pattern detected at 'Collateral Valuation' during automated risk scan.,False
+RSK-1027,SOP-LU-001,12,Final Compliance Sign-off,Unauthorized Step Bypass,Medium,2026-07-22,Anomalous pattern detected at 'Final Compliance Sign-off' during automated risk scan.,False
+RSK-1028,SOP-LU-001,13,Final Approval & Booking,Compliance Breach,Low,2026-06-03,Anomalous pattern detected at 'Final Approval & Booking' during automated risk scan.,False
+RSK-1029,SOP-LU-001,2,KYC & Identity Verification,Valuation Anomaly,Low,2026-06-13,Anomalous pattern detected at 'KYC & Identity Verification' during automated risk scan.,False
+RSK-1030,SOP-LU-001,15,Post-Disbursement Audit Tagging,Unauthorized Step Bypass,Low,2026-05-15,Anomalous pattern detected at 'Post-Disbursement Audit Tagging' during automated risk scan.,False
+RSK-1031,SOP-LU-001,3,Credit Bureau Pull,Unauthorized Step Bypass,High,2026-06-18,Anomalous pattern detected at 'Credit Bureau Pull' during automated risk scan.,False
+RSK-1032,SOP-LU-001,1,Application Intake,Unauthorized Step Bypass,Low,2026-07-15,Anomalous pattern detected at 'Application Intake' during automated risk scan.,True
+RSK-1033,SOP-LU-001,14,Disbursement Instruction,SLA Breach,Medium,2026-06-24,Anomalous pattern detected at 'Disbursement Instruction' during automated risk scan.,False
+RSK-1034,SOP-LU-001,13,Final Approval & Booking,Unauthorized Step Bypass,High,2026-05-17,Anomalous pattern detected at 'Final Approval & Booking' during automated risk scan.,False
+RSK-1035,SOP-LU-001,10,Conditional Approval Decision,Data Quality Issue,Medium,2026-05-14,Anomalous pattern detected at 'Conditional Approval Decision' during automated risk scan.,True
+RSK-1036,SOP-LU-001,9,Manual Underwriting Review,Fraud Indicator,High,2026-06-10,Anomalous pattern detected at 'Manual Underwriting Review' during automated risk scan.,False
+RSK-1037,SOP-LU-001,14,Disbursement Instruction,Data Quality Issue,Low,2026-07-27,Anomalous pattern detected at 'Disbursement Instruction' during automated risk scan.,True
+RSK-1038,SOP-LU-001,10,Conditional Approval Decision,Valuation Anomaly,Low,2026-08-04,Anomalous pattern detected at 'Conditional Approval Decision' during automated risk scan.,False
+RSK-1039,SOP-LU-001,1,Application Intake,Unauthorized Step Bypass,Medium,2026-06-09,Anomalous pattern detected at 'Application Intake' during automated risk scan.,False
+RSK-1040,SOP-LU-001,2,KYC & Identity Verification,Unauthorized Step Bypass,Low,2026-07-30,Anomalous pattern detected at 'KYC & Identity Verification' during automated risk scan.,False
+RSK-1041,SOP-LU-001,11,Document Stipulation Collection,SLA Breach,High,2026-07-03,Anomalous pattern detected at 'Document Stipulation Collection' during automated risk scan.,False
+RSK-1042,SOP-LU-001,7,Fraud Risk Screening,Fraud Indicator,Low,2026-06-12,Anomalous pattern detected at 'Fraud Risk Screening' during automated risk scan.,False
