@@ -1,0 +1,36 @@
+services:
+
+  process-genome-ai:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: process-genome-ai
+
+    ports:
+      - "8501:8501"
+
+    env_file:
+      - .env
+
+    volumes:
+      # Persist generated audit/runtime data
+      - ./data:/app/data
+
+      # Optional: persist Streamlit configuration
+      - ./.streamlit:/app/.streamlit
+
+    restart: unless-stopped
+
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "curl",
+          "--fail",
+          "http://localhost:8501/_stcore/health"
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 20s
