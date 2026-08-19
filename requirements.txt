@@ -1,0 +1,22 @@
+# Core app
+streamlit>=1.36.0
+pandas>=2.2.0
+numpy>=1.26.0
+
+# Visualization
+plotly>=5.22.0
+
+# Vector search / RAG
+faiss-cpu>=1.8.0
+scikit-learn>=1.4.0
+
+# Optional: enables real semantic embeddings instead of the TF-IDF fallback
+sentence-transformers>=2.7.0
+
+# Optional: enables live Azure OpenAI generation instead of the offline
+# template generator. The app runs fully without this installed/configured.
+openai>=1.30.0
+
+# Optional: only needed if wiring core/mutation_engine's Databricks reference
+# loader (utils/data_loader.py) to a live Databricks SQL warehouse.
+# databricks-sql-connector>=3.1.0
