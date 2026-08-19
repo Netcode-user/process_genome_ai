@@ -1,0 +1,7 @@
+version_id,sop_id,generation,mutation_type,mutation_description,fitness_score,status,approved_by,timestamp
+GEN-001,SOP-LU-001,1,Baseline,Initial SOP genome established from regulatory baseline,0.71,Approved,N.Fernandes,2025-11-02
+GEN-002,SOP-LU-001,2,Step Reorder,Moved Fraud Risk Screening before Collateral Valuation to reduce wasted valuation cost on fraud cases,0.78,Approved,N.Fernandes,2026-01-10
+GEN-003,SOP-LU-001,3,Step Merge,Merged Income Verification sub-checks into single automated step using document AI,0.83,Approved,R.Kapoor,2026-03-04
+GEN-004,SOP-LU-001,4,New Control Insertion,Inserted Automated Credit Scoring step prior to Manual Review to cut manual review load by 34%,0.87,Approved,R.Kapoor,2026-04-22
+GEN-005,SOP-LU-001,5,Duration Optimization,Reduced expected duration for Document Stipulation Collection based on observed cycle-time data,0.85,Pending Review,-,2026-07-30
+GEN-006,SOP-LU-001,5,Risk Control Strengthening,Add secondary compliance check after Collateral Valuation for high-value loans (>50L) to mitigate rising drift risk,0.90,Pending Review,-,2026-08-05
