@@ -1879,7 +1879,7 @@ render_html(
 
             border:
                 1px solid
-                {llm_status["color"]}45;
+                {llm_status.get("color", "#6B7280")}45;;
         ">
 
             <div style="
