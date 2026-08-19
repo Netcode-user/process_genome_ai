@@ -1614,10 +1614,7 @@ render_html(
 st.sidebar.markdown("---")
 st.sidebar.caption(
     "✅ Anthropic Connected"
-    if os.getenv("ANTHROPIC_API_KEY")
-    
 )
-
 
 # =============================================================================
 # NAVIGATION
