@@ -1,0 +1,16 @@
+sop_id,step_no,step_name,description,owner_role,expected_duration_min,risk_level,compliance_ref,version,last_updated,status
+SOP-LU-001,1,Application Intake,Receive and log loan application from origination channel,Loan Ops Associate,10,Low,REG-KYC-01,v3.2,2026-06-15,Active
+SOP-LU-001,2,KYC & Identity Verification,Verify applicant identity documents against KYC registry,Compliance Analyst,20,High,REG-KYC-02,v3.2,2026-06-15,Active
+SOP-LU-001,3,Credit Bureau Pull,Pull credit report from bureau and parse score,Underwriter,15,Medium,REG-CRD-01,v3.2,2026-06-15,Active
+SOP-LU-001,4,Income & Employment Verification,"Validate income proofs, payslips, and employer records",Underwriter,25,Medium,REG-INC-03,v3.2,2026-06-15,Active
+SOP-LU-001,5,Debt-to-Income Calculation,Compute DTI ratio using verified income and liabilities,Underwriter,10,Medium,REG-DTI-01,v3.2,2026-06-15,Active
+SOP-LU-001,6,Collateral Valuation,Independent valuation of pledged collateral/property,Valuation Specialist,45,High,REG-COL-02,v3.2,2026-06-15,Active
+SOP-LU-001,7,Fraud Risk Screening,Run applicant data through fraud detection engine,Risk Analyst,15,High,REG-FRD-01,v3.2,2026-06-15,Active
+SOP-LU-001,8,Automated Credit Scoring,Run application through ML credit scoring model,System,5,Medium,REG-CRD-04,v3.2,2026-06-15,Active
+SOP-LU-001,9,Manual Underwriting Review,Senior underwriter reviews edge-case / flagged applications,Senior Underwriter,30,High,REG-UWR-05,v3.2,2026-06-15,Active
+SOP-LU-001,10,Conditional Approval Decision,Issue conditional approval with any stipulations,Underwriting Manager,15,Medium,REG-UWR-06,v3.2,2026-06-15,Active
+SOP-LU-001,11,Document Stipulation Collection,Collect any outstanding stipulated documents,Loan Ops Associate,20,Low,REG-DOC-02,v3.2,2026-06-15,Active
+SOP-LU-001,12,Final Compliance Sign-off,Compliance officer certifies regulatory adherence,Compliance Officer,15,High,REG-COM-01,v3.2,2026-06-15,Active
+SOP-LU-001,13,Final Approval & Booking,Final approval and loan booking into core system,Underwriting Manager,10,Medium,REG-UWR-07,v3.2,2026-06-15,Active
+SOP-LU-001,14,Disbursement Instruction,Generate disbursement instruction to treasury/payments,Loan Ops Associate,10,Medium,REG-DIS-01,v3.2,2026-06-15,Active
+SOP-LU-001,15,Post-Disbursement Audit Tagging,Tag file for post-disbursement quality audit sampling,QA Analyst,5,Low,REG-AUD-01,v3.2,2026-06-15,Active
