@@ -2023,21 +2023,9 @@ with st.sidebar:
       </div>
     </div>
     """, unsafe_allow_html=True)
-    st.markdown('<div class="sidebar-section-title" style="margin-top:18px;">Quick Actions</div>', unsafe_allow_html=True)
-    if st.button("＋  New SOP Analysis", key="quick_new_sop", use_container_width=True):
-        st.session_state.active_page = "🤖 AI SOP Generator"
-        st.rerun()
-    if st.button("⇧  Upload Process Log", key="quick_upload_log", use_container_width=True):
-        st.session_state.active_page = "📡 Real-Time Monitoring"
-        st.rerun()
-    if st.button("⇩  Import SOP", key="quick_import_sop", use_container_width=True):
-        st.session_state.active_page = "🧬 Process Genome Explorer"
-        st.rerun()
+    # Keep only the stable System Settings action.
     if st.button("⚙  System Settings", key="quick_settings", use_container_width=True):
         st.info("System settings are available through the application configuration and .env file.")
-
-# Sidebar LLM status (compact indicator; the detailed status panel is in the main workspace).
-st.sidebar.caption("🟢 LLM ONLINE · Anthropic Claude" if os.getenv("ANTHROPIC_API_KEY") else "🟢 LLM ONLINE · Online Demo Mode")
 
 llm_backend = getattr(rag, "llm_backend", "")
 embedder = getattr(rag, "embedder", None)
