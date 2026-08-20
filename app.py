@@ -312,7 +312,7 @@ section[data-testid="stSidebar"] {{
 
 section[data-testid="stSidebar"] .stRadio label,
 section[data-testid="stSidebar"] .stRadio span {
-    color: white !important;
+    colour: white !important;
     opacity: 1 !important;
     font-weight: 700 !important;
 }
@@ -324,7 +324,7 @@ section[data-testid="stSidebar"] .stRadio label:hover {{
             rgba(249,115,22,0.15),
             rgba(139,92,246,0.12)
         );
-    color: white !important;
+    colour: white !important;
 }}
 
 
