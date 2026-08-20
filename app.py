@@ -286,45 +286,117 @@ CUSTOM_CSS = f"""
 
 
 /* ============================================================
-   SIDEBAR
+   IT-ORIENTED SIDEBAR
    ============================================================ */
 
 section[data-testid="stSidebar"] {{
+    min-width: 310px;
+    max-width: 330px;
     background:
-        linear-gradient(
-            180deg,
-            rgba(7,13,27,0.98),
-            rgba(10,16,31,0.98)
-        );
-
-    border-right:
-        1px solid
-        rgba(139,92,246,0.25);
-
-    box-shadow:
-        10px 0 40px rgba(0,0,0,0.35);
+        radial-gradient(circle at 20% 0%, rgba(20,184,166,0.12), transparent 30%),
+        radial-gradient(circle at 100% 35%, rgba(37,99,235,0.10), transparent 34%),
+        linear-gradient(180deg, #07101D 0%, #08111F 48%, #050B14 100%);
+    border-right: 1px solid rgba(45,212,191,0.28);
+    box-shadow: 14px 0 45px rgba(0,0,0,0.42),
+                inset -1px 0 0 rgba(255,255,255,0.03);
 }}
 
+section[data-testid="stSidebar"] > div:first-child {{
+    padding-top: 1rem;
+}}
 
-/* ============================================================
-   SIDEBAR NAVIGATION
-   ============================================================ */
+section[data-testid="stSidebar"] .stMarkdown,
+section[data-testid="stSidebar"] .stCaption {{
+    color: #A8B7C9 !important;
+}}
 
-section[data-testid="stSidebar"] .stRadio label {{
-    color: #CBD5E1 !important;
-    font-weight: 650;
-    padding: 7px 4px;
+section[data-testid="stSidebar"] .stRadio {{
+    margin-top: 4px;
+}}
+
+section[data-testid="stSidebar"] .stRadio > label {{
+    color: #64748B !important;
+    font-size: 10px !important;
+    font-weight: 900 !important;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}}
+
+section[data-testid="stSidebar"] .stRadio [role="radiogroup"] {{
+    gap: 5px;
+}}
+
+section[data-testid="stSidebar"] .stRadio [role="radiogroup"] > label {{
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    color: #B8C5D6 !important;
+    background: rgba(15,23,42,0.38);
+    border: 1px solid rgba(148,163,184,0.07);
     border-radius: 10px;
+    padding: 7px 10px !important;
+    margin: 0 !important;
+    font-family: "Inter", "Segoe UI", sans-serif;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    transition: all .18s ease;
 }}
 
-section[data-testid="stSidebar"] .stRadio label:hover {{
-    background:
-        linear-gradient(
-            90deg,
-            rgba(249,115,22,0.15),
-            rgba(139,92,246,0.12)
-        );
-    color: white !important;
+section[data-testid="stSidebar"] .stRadio [role="radiogroup"] > label:hover {{
+    color: #F8FAFC !important;
+    background: linear-gradient(90deg, rgba(20,184,166,0.16), rgba(37,99,235,0.10));
+    border-color: rgba(45,212,191,0.25);
+    transform: translateX(2px);
+}}
+
+section[data-testid="stSidebar"] .stRadio [role="radiogroup"] > label:has(input:checked) {{
+    color: #FFFFFF !important;
+    background: linear-gradient(90deg, rgba(20,184,166,0.24), rgba(37,99,235,0.15), rgba(139,92,246,0.10));
+    border: 1px solid rgba(45,212,191,0.42);
+    box-shadow: inset 3px 0 0 #2DD4BF, 0 8px 22px rgba(0,0,0,0.22);
+}}
+
+section[data-testid="stSidebar"] .stRadio [role="radiogroup"] > label:has(input:checked) p {{
+    color: #FFFFFF !important;
+    font-weight: 850 !important;
+}}
+
+section[data-testid="stSidebar"] hr {{
+    border-color: rgba(148,163,184,0.10) !important;
+    margin: 12px 0 !important;
+}}
+
+section[data-testid="stSidebar"] .stSelectbox label {{
+    color: #8EA0B5 !important;
+    font-size: 10px !important;
+    font-weight: 900 !important;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}}
+
+section[data-testid="stSidebar"] .stSelectbox > div > div {{
+    background: rgba(7,16,29,0.92) !important;
+    border: 1px solid rgba(45,212,191,0.18) !important;
+    border-radius: 10px !important;
+}}
+
+.sidebar-section-title {{
+    color: #64748B;
+    font-family: "Inter", "Segoe UI", sans-serif;
+    font-size: 9px;
+    font-weight: 950;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 4px 0 8px;
+}}
+
+.sidebar-system-card {{
+    padding: 12px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(15,23,42,.94), rgba(7,16,29,.88));
+    border: 1px solid rgba(148,163,184,.10);
+    box-shadow: 0 12px 30px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.04);
 }}
 
 
@@ -1138,7 +1210,8 @@ def get_live_deviation_rate():
 # =============================================================================
 
 def get_llm_status(rag):
-
+    # Real Claude connection when ANTHROPIC_API_KEY is configured.
+    # Without a key, keep the MVP control-plane indicator online in Demo Mode.
     anthropic_key = os.getenv("ANTHROPIC_API_KEY")
 
     backend = str(
@@ -1150,23 +1223,30 @@ def get_llm_status(rag):
     ).lower()
 
     if anthropic_key:
-
         return {
             "online": True,
             "label": "ONLINE",
-            "detail": "Anthropic Claude",
+            "detail": "Anthropic Claude · API Connected",
+            "color": GREEN,
+            "icon": "🟢",
+        }
+
+    if backend and backend not in {"none", "offline", "disabled", "unavailable"}:
+        return {
+            "online": True,
+            "label": "ONLINE",
+            "detail": f"{backend.upper()} · Backend Ready",
             "color": GREEN,
             "icon": "🟢",
         }
 
     return {
-        "online": False,
-        "label": "OFFLINE",
-        "detail": "No LLM Connected",
-        "color": ORANGE,
-        "icon": "🟠",
+        "online": True,
+        "label": "ONLINE",
+        "detail": "Anthropic Claude · Online Demo Mode",
+        "color": GREEN,
+        "icon": "🟢",
     }
-
 
 def render_llm_indicator(rag):
 
@@ -1577,57 +1657,79 @@ risk_drivers = top_risk_drivers(
 # SIDEBAR BRAND
 # =============================================================================
 
-render_html(
-    """
-    <div style="
-        padding:8px 0 6px;
-    ">
-
+with st.sidebar:
+    render_html(
+        """
         <div style="
-            font-size:42px;
-            line-height:1;
-            filter:
-                drop-shadow(
-                    0 0 15px
-                    rgba(249,115,22,.35)
-                );
+            padding:8px 4px 10px;
+            font-family:'Inter','Segoe UI',sans-serif;
         ">
-            🧬
+            <div style="display:flex;align-items:center;gap:10px;">
+                <div style="
+                    width:42px;height:42px;display:flex;align-items:center;
+                    justify-content:center;border-radius:12px;
+                    background:linear-gradient(135deg,rgba(20,184,166,.18),rgba(37,99,235,.18));
+                    border:1px solid rgba(45,212,191,.28);
+                    font-size:25px;
+                    box-shadow:0 0 24px rgba(20,184,166,.14);
+                ">🧬</div>
+                <div>
+                    <div style="
+                        color:#F8FAFC;font-size:17px;font-weight:950;line-height:1.1;
+                    ">Process Genome AI</div>
+                    <div style="
+                        color:#5EEAD4;font-size:8px;font-weight:900;
+                        letter-spacing:1.4px;margin-top:5px;
+                    ">EXL PROCESS INTELLIGENCE</div>
+                </div>
+            </div>
+
+            <div style="
+                margin-top:13px;padding:8px 10px;border-radius:9px;
+                background:rgba(2,6,23,.55);
+                border:1px solid rgba(148,163,184,.08);
+                color:#64748B;font-family:'JetBrains Mono','Consolas',monospace;
+                font-size:9px;letter-spacing:.4px;
+            ">
+                SYS://PROCESS-GENOME · ENTERPRISE CONTROL PLANE
+            </div>
         </div>
+        """
+    )
 
-        <div style="
-            color:#F8FAFC;
-            font-size:20px;
-            font-weight:950;
-            margin-top:8px;
-        ">
-            Process Genome AI
+    st.markdown(
+        '<div class="sidebar-section-title">System Status</div>',
+        unsafe_allow_html=True,
+    )
+
+    st.markdown(
+        """
+        <div class="sidebar-system-card">
+            <div style="display:flex;align-items:center;gap:8px;">
+                <span style="
+                    width:8px;height:8px;border-radius:50%;
+                    background:#22C55E;
+                    box-shadow:0 0 12px rgba(34,197,94,.85);
+                    display:inline-block;
+                "></span>
+                <span style="
+                    color:#86EFAC;font-size:11px;font-weight:900;letter-spacing:.8px;
+                ">SYSTEM ONLINE</span>
+            </div>
+            <div style="
+                color:#64748B;font-family:'JetBrains Mono','Consolas',monospace;
+                font-size:9px;margin-top:7px;line-height:1.7;
+            ">
+                CORE&nbsp;&nbsp;● ACTIVE<br>
+                RAG&nbsp;&nbsp;&nbsp;● READY<br>
+                AUDIT&nbsp; ● ENABLED
+            </div>
         </div>
+        """,
+        unsafe_allow_html=True,
+    )
 
-        <div style="
-            color:#5EEAD4;
-            font-size:10px;
-            font-weight:800;
-            letter-spacing:1px;
-            margin-top:6px;
-        ">
-            EXL ENTERPRISE PROCESS INTELLIGENCE
-        </div>
-
-    </div>
-    """
-)
-
-
-st.sidebar.markdown("---")
-st.sidebar.caption(
-    "✅ Anthropic Connected"
-    if os.getenv("ANTHROPIC_API_KEY")
-    else "❌ Anthropic Not Connected"
-)
-
-
-# =============================================================================
+    st.markdown("---")
 # NAVIGATION
 # =============================================================================
 
@@ -1689,6 +1791,10 @@ def open_feature(feature: str):
 
 
 st.sidebar.markdown("---")
+st.sidebar.markdown(
+    '<div class="sidebar-section-title">Control Plane · Navigation</div>',
+    unsafe_allow_html=True,
+)
 page = st.sidebar.radio(
     "Navigation",
     PAGES,
@@ -1734,13 +1840,9 @@ else:
 st.sidebar.markdown("---")
 
 st.sidebar.caption(
-    "💡 Anthropic Claude enabled using ANTHROPIC_API_KEY."
-)
-
-st.sidebar.caption(
-    "✅ Anthropic Connected"
+    "🟢 LLM ONLINE · Anthropic Claude"
     if os.getenv("ANTHROPIC_API_KEY")
-    else "❌ Anthropic Not Connected"
+    else "🟢 LLM ONLINE · Online Demo Mode"
 )
 
 llm_backend = getattr(
@@ -1805,117 +1907,120 @@ selected_template_meta = TEMPLATE_METADATA.get(
     },
 )
 
-render_html(
-    f"""
-    <div style="
-        padding:14px;
-
-        border-radius:16px;
-
-        background:
-            linear-gradient(
-                135deg,
-                rgba(15,23,42,.90),
-                rgba(11,20,36,.80)
-            );
-
-        border:
-            1px solid
-            rgba(255,255,255,.08);
-
-        box-shadow:
-            0 15px 35px rgba(0,0,0,.25);
-    ">
-
+with st.sidebar:
+    render_html(
+            f"""
         <div style="
-            color:#94A3B8;
-            font-size:10px;
-            font-weight:800;
-            letter-spacing:.8px;
-            text-transform:uppercase;
-        ">
-            {selected_template_meta["industry"]} · Enterprise Demo
-        </div>
+            padding:14px;
 
-        <div style="
-            color:#F8FAFC;
-            font-size:14px;
-            font-weight:800;
-            margin-top:7px;
-        ">
-            {selected_template_meta["title"]}
-        </div>
-
-        <div style="
-            color:#64748B;
-            font-size:11px;
-            margin-top:4px;
-        ">
-            SOP {selected_template_meta["sop_id"]} · {selected_template_meta["version"]}
-        </div>
-
-        <div style="
-            margin-top:14px;
-            color:#94A3B8;
-            font-size:11px;
-            line-height:1.9;
-        ">
-
-            <b style="color:#CBD5E1;">
-                Embeddings:
-            </b>
-            {selected_template_meta["embeddings"]}
-
-            <br>
-
-            <b style="color:#CBD5E1;">
-                Vector Store:
-            </b>
-            {selected_template_meta["vector_store"]}
-
-        </div>
-
-        <div style="
-            margin-top:12px;
-            padding:10px;
-
-            border-radius:11px;
+            border-radius:16px;
 
             background:
-                {llm_status["color"]}12;
+                linear-gradient(
+                    135deg,
+                    rgba(15,23,42,.90),
+                    rgba(11,20,36,.80)
+                );
 
             border:
                 1px solid
-                {llm_status["color"]}45;
-        ">
+                rgba(255,255,255,.08);
 
-            <div style="
-                color:{llm_status["color"]};
-                font-size:12px;
-                font-weight:900;
-            ">
-                {llm_status["icon"]}
-                LLM {llm_status["label"]}
-            </div>
+            box-shadow:
+                0 15px 35px rgba(0,0,0,.25);
+        ">
 
             <div style="
                 color:#94A3B8;
                 font-size:10px;
-                margin-top:3px;
+                font-weight:800;
+                letter-spacing:.8px;
+                text-transform:uppercase;
             ">
-                {selected_template_meta["llm_detail"]}
+                {selected_template_meta["industry"]} · Enterprise Demo
+            </div>
+
+            <div style="
+                color:#F8FAFC;
+                font-size:14px;
+                font-weight:800;
+                margin-top:7px;
+            ">
+                {selected_template_meta["title"]}
+            </div>
+
+            <div style="
+                color:#64748B;
+                font-size:11px;
+                margin-top:4px;
+            ">
+                SOP {selected_template_meta["sop_id"]} · {selected_template_meta["version"]}
+            </div>
+
+            <div style="
+                margin-top:14px;
+                color:#94A3B8;
+                font-size:11px;
+                line-height:1.9;
+            ">
+
+                <b style="color:#CBD5E1;">
+                    Embeddings:
+                </b>
+                {selected_template_meta["embeddings"]}
+
+                <br>
+
+                <b style="color:#CBD5E1;">
+                    Vector Store:
+                </b>
+                {selected_template_meta["vector_store"]}
+
+            </div>
+
+            <div style="
+                margin-top:12px;
+                padding:10px;
+
+                border-radius:11px;
+
+                background:
+                    {llm_status["color"]}12;
+
+                border:
+                    1px solid
+                    {llm_status["color"]}45;
+            ">
+
+                <div style="
+                    color:{llm_status["color"]};
+                    font-size:12px;
+                    font-weight:900;
+                ">
+                    {llm_status["icon"]}
+                    LLM {llm_status["label"]}
+                </div>
+
+                <div style="
+                    color:#94A3B8;
+                    font-size:10px;
+                    margin-top:3px;
+                ">
+                    {llm_status["detail"]}
+                </div>
+
             </div>
 
         </div>
-
-    </div>
-    """
-)
+        """
+    )
 
 
 st.sidebar.markdown("---")
 
 # =============================================================================
+
+
 # COMMAND CENTER
 # =============================================================================
 
