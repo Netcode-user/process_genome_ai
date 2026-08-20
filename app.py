@@ -310,12 +310,12 @@ section[data-testid="stSidebar"] {{
    SIDEBAR NAVIGATION
    ============================================================ */
 
-section[data-testid="stSidebar"] .stRadio label {{
-    color: #CBD5E1 !important;
-    font-weight: 650;
-    padding: 7px 4px;
-    border-radius: 10px;
-}}
+section[data-testid="stSidebar"] .stRadio label,
+section[data-testid="stSidebar"] .stRadio span {
+    color: white !important;
+    opacity: 1 !important;
+    font-weight: 700 !important;
+}
 
 section[data-testid="stSidebar"] .stRadio label:hover {{
     background:
