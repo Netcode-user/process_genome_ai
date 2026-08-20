@@ -2137,13 +2137,6 @@ if page == "🏠 Command Center":
     </div>
     """)
 
-    # Interactive button opens the existing Process Genome Explorer feature.
-    _, explore_col, _ = st.columns([1, 1.4, 1])
-    with explore_col:
-        if st.button("↗  Explore 3D Process Landscape", key="pg_explore_3d", use_container_width=True, type="primary"):
-            st.session_state.active_page = "🧬 Process Genome Explorer"
-            st.rerun()
-
     # -------------------------------------------------------------------------
     # 5. Screenshot-style KPI row
     # -------------------------------------------------------------------------
