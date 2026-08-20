@@ -310,12 +310,12 @@ section[data-testid="stSidebar"] {{
    SIDEBAR NAVIGATION
    ============================================================ */
 
-section[data-testid="stSidebar"] .stRadio label,
-section[data-testid="stSidebar"] .stRadio span {
-    colour: white !important;
-    opacity: 1 !important;
-    font-weight: 700 !important;
-}
+section[data-testid="stSidebar"] .stRadio label {{
+    color: #CBD5E1 !important;
+    font-weight: 650;
+    padding: 7px 4px;
+    border-radius: 10px;
+}}
 
 section[data-testid="stSidebar"] .stRadio label:hover {{
     background:
@@ -324,7 +324,7 @@ section[data-testid="stSidebar"] .stRadio label:hover {{
             rgba(249,115,22,0.15),
             rgba(139,92,246,0.12)
         );
-    colour: white !important;
+    color: white !important;
 }}
 
 
@@ -1159,7 +1159,14 @@ def get_llm_status(rag):
             "icon": "🟢",
         }
 
-    
+    return {
+        "online": False,
+        "label": "OFFLINE",
+        "detail": "No LLM Connected",
+        "color": ORANGE,
+        "icon": "🟠",
+    }
+
 
 def render_llm_indicator(rag):
 
