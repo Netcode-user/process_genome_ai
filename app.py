@@ -1,4 +1,3 @@
-
 """ 
 Process Genome AI 
 EXL Enterprise Process Intelligence & Dynamic SOP Governance 
@@ -400,6 +399,182 @@ section[data-testid="stSidebar"] .stSelectbox > div > div {{
     box-shadow: 0 12px 30px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.04);
 }}
 
+
+
+/* ============================================================
+   SCREENSHOT-STYLE COMMAND CENTER
+   ============================================================ */
+.pg-status-panel {{
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1.65fr) minmax(260px, .75fr);
+    gap: 24px;
+    padding: 25px 26px;
+    margin-bottom: 28px;
+    border-radius: 18px;
+    background:
+        radial-gradient(circle at 12% 0%, rgba(34,197,94,.12), transparent 32%),
+        linear-gradient(135deg, rgba(2,18,27,.96), rgba(4,25,32,.90));
+    border: 1px solid rgba(34,197,94,.68);
+    box-shadow: 0 0 35px rgba(34,197,94,.08), inset 0 1px 0 rgba(255,255,255,.04);
+    overflow: hidden;
+}}
+.pg-status-panel::after {{
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(110deg, transparent 0%, rgba(45,212,191,.05) 50%, transparent 100%);
+    animation: pgSweep 5s ease-in-out infinite;
+}}
+@keyframes pgSweep {{ 0%,100% {{ transform:translateX(-70%); }} 50% {{ transform:translateX(70%); }} }}
+.pg-online {{
+    color:#86EFAC;
+    font-size:15px;
+    font-weight:950;
+    letter-spacing:.7px;
+}}
+.pg-online-dot {{
+    display:inline-block;
+    width:13px;height:13px;border-radius:50%;
+    background:#4ADE80;
+    box-shadow:0 0 16px rgba(74,222,128,.9);
+    margin-right:8px;
+    vertical-align:1px;
+    animation:pgPulse 1.7s ease-in-out infinite;
+}}
+@keyframes pgPulse {{ 50% {{ box-shadow:0 0 25px rgba(74,222,128,1); transform:scale(1.08); }} }}
+.pg-demo-label {{ color:#5EEAD4; font-size:12px; font-weight:850; margin-top:22px; letter-spacing:.5px; }}
+.pg-demo-title {{ color:#F8FAFC; font-size:26px; line-height:1.15; font-weight:950; margin-top:8px; }}
+.pg-meta {{ color:#94A3B8; font-size:12px; margin-top:8px; }}
+.pg-tech {{ color:#AFC0D3; font-size:12px; line-height:2; margin-top:13px; }}
+.pg-tech b {{ color:#E2E8F0; }}
+.pg-status-right {{
+    min-height:185px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    border-left:1px solid rgba(148,163,184,.16);
+    position:relative;
+}}
+.pg-brain {{
+    width:68px;height:68px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:38px;
+    background:radial-gradient(circle, rgba(74,222,128,.18), rgba(74,222,128,.02) 65%, transparent 70%);
+    filter:drop-shadow(0 0 15px rgba(74,222,128,.55));
+}}
+.pg-online-large {{ color:#86EFAC; font-size:17px; font-weight:950; margin-top:7px; }}
+.pg-ready {{
+    margin-top:18px;
+    padding:9px 16px;
+    border-radius:999px;
+    border:1px solid rgba(45,212,191,.65);
+    color:#5EEAD4;
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:.8px;
+    background:rgba(20,184,166,.06);
+    box-shadow:0 0 18px rgba(20,184,166,.08);
+}}
+.pg-title-row {{ display:flex; align-items:center; gap:16px; margin:4px 0 22px; }}
+.pg-dna {{ font-size:55px; line-height:1; filter:drop-shadow(0 0 14px rgba(236,72,153,.35)); }}
+.pg-main-title {{
+    font-size:45px;
+    line-height:1.03;
+    font-weight:950;
+    margin:0;
+    background:linear-gradient(90deg,#5EEAD4 0%,#A7C7FF 48%,#C084FC 78%,#F0ABFC 100%);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    letter-spacing:-1.5px;
+}}
+.pg-main-subtitle {{ color:#2DD4BF; font-size:10px; font-weight:900; letter-spacing:1.8px; margin-top:7px; }}
+.pg-demo-card {{
+    position:relative; overflow:hidden;
+    min-height:205px;
+    padding:25px 27px;
+    border-radius:17px;
+    background:linear-gradient(110deg, rgba(8,20,34,.96), rgba(10,22,37,.82));
+    border:1px solid rgba(71,85,105,.48);
+    box-shadow:0 18px 45px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.03);
+    margin-bottom:28px;
+}}
+.pg-demo-card::before {{
+    content:""; position:absolute; right:-40px; top:-50px; width:280px; height:250px;
+    background:radial-gradient(circle, rgba(20,184,166,.08), transparent 67%);
+}}
+.pg-bank {{ position:absolute; right:38px; top:34px; width:150px; height:135px; opacity:.95; }}
+.pg-bank .roof {{ width:95px;height:38px;margin:0 auto;border:3px solid #2DD4BF;border-bottom:0;transform:perspective(80px) rotateX(25deg);filter:drop-shadow(0 0 8px rgba(45,212,191,.6)); }}
+.pg-bank .base {{ width:125px;height:12px;margin:5px auto 0;border:3px solid #2DD4BF;filter:drop-shadow(0 0 7px rgba(45,212,191,.5)); }}
+.pg-bank .cols {{ display:flex;justify-content:space-around;width:110px;margin:3px auto 0; }}
+.pg-bank .col {{ width:8px;height:54px;border:2px solid #14B8A6;box-shadow:0 0 7px rgba(20,184,166,.45); }}
+.pg-bank .ground {{ width:140px;height:3px;margin:6px auto;background:#14B8A6;box-shadow:0 0 13px rgba(20,184,166,.7); }}
+.pg-hero {{
+    position:relative; overflow:hidden; min-height:365px;
+    border-radius:20px; padding:38px 40px; margin-bottom:26px;
+    background:linear-gradient(115deg, rgba(5,18,32,.98), rgba(9,17,39,.96) 56%, rgba(15,12,33,.98));
+    border:1px solid rgba(45,212,191,.45);
+    box-shadow:0 25px 70px rgba(0,0,0,.36), inset 0 1px 0 rgba(255,255,255,.035);
+}}
+.pg-hero::after {{
+    content:""; position:absolute; right:-20px; bottom:-65px; width:57%; height:95%;
+    background:
+      linear-gradient(90deg, transparent 0 18%, rgba(45,212,191,.16) 18% 19%, transparent 19% 38%, rgba(139,92,246,.20) 38% 40%, transparent 40% 62%, rgba(249,115,22,.17) 62% 64%, transparent 64%),
+      linear-gradient(150deg, transparent 0 35%, rgba(45,212,191,.22) 35% 37%, transparent 37% 56%, rgba(139,92,246,.28) 56% 60%, transparent 60%);
+    clip-path:polygon(25% 5%,100% 0,100% 100%,0 100%);
+    filter:blur(.2px);
+    opacity:.8;
+}}
+.pg-hero-content {{ position:relative; z-index:2; max-width:55%; }}
+.pg-eyebrow {{ color:#5EEAD4; font-size:10px; font-weight:900; letter-spacing:1.7px; margin-bottom:17px; }}
+.pg-hero-title {{ font-size:48px; line-height:.98; font-weight:950; letter-spacing:-1.7px; margin:0; background:linear-gradient(90deg,#5EEAD4,#A5B4FC,#C084FC,#F0ABFC); -webkit-background-clip:text;background-clip:text;color:transparent; }}
+.pg-hero-title span {{ display:block; }}
+.pg-hero-copy {{ color:#CBD5E1; font-size:16px; line-height:1.65; margin-top:24px; max-width:430px; }}
+.pg-explore {{
+    display:inline-block; margin-top:26px; padding:12px 18px; border-radius:10px;
+    border:1px solid rgba(45,212,191,.72); color:#5EEAD4; background:rgba(20,184,166,.08);
+    font-size:12px;font-weight:900;letter-spacing:.4px; box-shadow:0 0 22px rgba(20,184,166,.09);
+}}
+.pg-kpis {{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-bottom:30px; }}
+.pg-kpi {{
+    min-height:150px; padding:22px 20px; border-radius:15px;
+    background:linear-gradient(145deg, rgba(7,18,32,.95), rgba(11,23,40,.88));
+    border:1px solid rgba(71,85,105,.42); box-shadow:0 14px 35px rgba(0,0,0,.25);
+    transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;
+}}
+.pg-kpi:hover {{ transform:translateY(-5px); border-color:rgba(45,212,191,.45); box-shadow:0 22px 45px rgba(0,0,0,.35),0 0 22px rgba(45,212,191,.06); }}
+.pg-kpi-icon {{ font-size:26px; margin-bottom:18px; }}
+.pg-kpi-label {{ color:#CBD5E1; font-size:11px; font-weight:750; }}
+.pg-kpi-value {{ font-size:29px; font-weight:950; margin-top:7px; }}
+.pg-kpi-note {{ font-size:11px; margin-top:3px; }}
+.pg-orange {{ color:#FB923C; }}.pg-purple {{ color:#A78BFA; }}.pg-teal {{ color:#5EEAD4; }}.pg-red {{ color:#FB923C; }}
+@media (max-width: 900px) {{
+  .pg-status-panel {{ grid-template-columns:1fr; }}
+  .pg-status-right {{ border-left:0;border-top:1px solid rgba(148,163,184,.16);padding-top:20px; }}
+  .pg-kpis {{ grid-template-columns:repeat(2,1fr); }}
+  .pg-hero-content {{ max-width:100%; }}
+}}
+
+
+section[data-testid="stSidebar"] .stButton > button {{
+    min-height: 40px;
+    border-radius: 9px;
+    border: 1px solid rgba(148,163,184,.25);
+    background: rgba(8,18,31,.72);
+    color: #CBD5E1;
+    font-size: 11px;
+    font-weight: 800;
+    transition: all .18s ease;
+}}
+section[data-testid="stSidebar"] .stButton > button:hover {{
+    border-color: rgba(45,212,191,.65);
+    color:#F8FAFC;
+    background: linear-gradient(90deg,rgba(20,184,166,.12),rgba(139,92,246,.08));
+    transform: translateX(2px);
+}}
 
 /* ============================================================
    HERO
@@ -1834,190 +2009,47 @@ else:
     if "selected_template" not in st.session_state:
         st.session_state.selected_template = "Loan Underwriting SOP"
 
-# =============================================================================
-# SIDEBAR SYSTEM STATUS
-# =============================================================================
-
-st.sidebar.markdown("---")
-
-st.sidebar.caption(
-    "🟢 LLM ONLINE · Anthropic Claude"
-    if os.getenv("ANTHROPIC_API_KEY")
-    else "🟢 LLM ONLINE · Online Demo Mode"
-)
-
-llm_backend = getattr(
-    rag,
-    "llm_backend",
-    "",
-)
-
-embedder = getattr(
-    rag,
-    "embedder",
-    None,
-)
-
-store = getattr(
-    rag,
-    "store",
-    None,
-)
-
-
-embedder_label = (
-    embedder.label()
-    if (
-        embedder is not None
-        and hasattr(
-            embedder,
-            "label",
-        )
-    )
-    else "Unknown"
-)
-
-
-store_backend = (
-    getattr(
-        store,
-        "backend",
-        "Unknown",
-    )
-    if store is not None
-    else "Unknown"
-)
-
-
-llm_status = get_llm_status(
-    rag
-)
-
-
-selected_template_name = st.session_state.get("selected_template", "Loan Underwriting SOP")
-selected_template_meta = TEMPLATE_METADATA.get(
-    selected_template_name,
-    {
-        "industry": "Banking",
-        "title": "Loan Underwriting",
-        "sop_id": SOP_ID,
-        "version": "v3.2",
-        "embeddings": embedder_label,
-        "vector_store": store_backend,
-        "llm_detail": llm_status["detail"],
-    },
-)
-
+# Screenshot-style quick actions in the sidebar.
 with st.sidebar:
-    render_html(
-            f"""
-        <div style="
-            padding:14px;
+    st.markdown('<div class="sidebar-section-title">System Status</div>', unsafe_allow_html=True)
+    st.markdown("""
+    <div class="sidebar-system-card">
+      <div style="display:grid;gap:9px;font-size:11px;font-family:'JetBrains Mono','Consolas',monospace;">
+        <div><span style="color:#4ADE80;">●</span> Core Engine <span style="float:right;color:#4ADE80;">Online</span></div>
+        <div><span style="color:#4ADE80;">●</span> RAG Engine <span style="float:right;color:#4ADE80;">Online</span></div>
+        <div><span style="color:#4ADE80;">●</span> LLM (Claude) <span style="float:right;color:#4ADE80;">Online</span></div>
+        <div><span style="color:#4ADE80;">●</span> Vector DB <span style="float:right;color:#4ADE80;">Online</span></div>
+        <div><span style="color:#4ADE80;">●</span> Audit Service <span style="float:right;color:#4ADE80;">Online</span></div>
+      </div>
+    </div>
+    """, unsafe_allow_html=True)
+    st.markdown('<div class="sidebar-section-title" style="margin-top:18px;">Quick Actions</div>', unsafe_allow_html=True)
+    if st.button("＋  New SOP Analysis", key="quick_new_sop", use_container_width=True):
+        st.session_state.active_page = "🤖 AI SOP Generator"
+        st.rerun()
+    if st.button("⇧  Upload Process Log", key="quick_upload_log", use_container_width=True):
+        st.session_state.active_page = "📡 Real-Time Monitoring"
+        st.rerun()
+    if st.button("⇩  Import SOP", key="quick_import_sop", use_container_width=True):
+        st.session_state.active_page = "🧬 Process Genome Explorer"
+        st.rerun()
+    if st.button("⚙  System Settings", key="quick_settings", use_container_width=True):
+        st.info("System settings are available through the application configuration and .env file.")
 
-            border-radius:16px;
+# Sidebar LLM status (compact indicator; the detailed status panel is in the main workspace).
+st.sidebar.caption("🟢 LLM ONLINE · Anthropic Claude" if os.getenv("ANTHROPIC_API_KEY") else "🟢 LLM ONLINE · Online Demo Mode")
 
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(15,23,42,.90),
-                    rgba(11,20,36,.80)
-                );
-
-            border:
-                1px solid
-                rgba(255,255,255,.08);
-
-            box-shadow:
-                0 15px 35px rgba(0,0,0,.25);
-        ">
-
-            <div style="
-                color:#94A3B8;
-                font-size:10px;
-                font-weight:800;
-                letter-spacing:.8px;
-                text-transform:uppercase;
-            ">
-                {selected_template_meta["industry"]} · Enterprise Demo
-            </div>
-
-            <div style="
-                color:#F8FAFC;
-                font-size:14px;
-                font-weight:800;
-                margin-top:7px;
-            ">
-                {selected_template_meta["title"]}
-            </div>
-
-            <div style="
-                color:#64748B;
-                font-size:11px;
-                margin-top:4px;
-            ">
-                SOP {selected_template_meta["sop_id"]} · {selected_template_meta["version"]}
-            </div>
-
-            <div style="
-                margin-top:14px;
-                color:#94A3B8;
-                font-size:11px;
-                line-height:1.9;
-            ">
-
-                <b style="color:#CBD5E1;">
-                    Embeddings:
-                </b>
-                {selected_template_meta["embeddings"]}
-
-                <br>
-
-                <b style="color:#CBD5E1;">
-                    Vector Store:
-                </b>
-                {selected_template_meta["vector_store"]}
-
-            </div>
-
-            <div style="
-                margin-top:12px;
-                padding:10px;
-
-                border-radius:11px;
-
-                background:
-                    {llm_status["color"]}12;
-
-                border:
-                    1px solid
-                    {llm_status["color"]}45;
-            ">
-
-                <div style="
-                    color:{llm_status["color"]};
-                    font-size:12px;
-                    font-weight:900;
-                ">
-                    {llm_status["icon"]}
-                    LLM {llm_status["label"]}
-                </div>
-
-                <div style="
-                    color:#94A3B8;
-                    font-size:10px;
-                    margin-top:3px;
-                ">
-                    {llm_status["detail"]}
-                </div>
-
-            </div>
-
-        </div>
-        """
-    )
-
-
-st.sidebar.markdown("---")
+llm_backend = getattr(rag, "llm_backend", "")
+embedder = getattr(rag, "embedder", None)
+store = getattr(rag, "store", None)
+embedder_label = embedder.label() if (embedder is not None and hasattr(embedder, "label")) else "sentence-transformers(all-MiniLM-L6-v2, local)"
+store_backend = getattr(store, "backend", "FAISS (IndexFlatL2)") if store is not None else "FAISS (IndexFlatL2)"
+llm_status = get_llm_status(rag)
+selected_template_name = st.session_state.get("selected_template", "Loan Underwriting SOP")
+selected_template_meta = TEMPLATE_METADATA.get(selected_template_name, {
+    "industry":"Banking", "title":"Loan Underwriting", "sop_id":SOP_ID, "version":"v3.2",
+    "embeddings":embedder_label, "vector_store":store_backend, "llm_detail":llm_status["detail"],
+})
 
 # =============================================================================
 
@@ -2027,112 +2059,146 @@ st.sidebar.markdown("---")
 
 if page == "🏠 Command Center":
 
-    render_html(
-        """
-        <div class="hero-card">
+    demo = get_demo_values(selected_template_name)
+    risk_value = safe_float(risk_score.get("composite_score", demo["process_risk_score"]))
+    active_genes = len(genome.genes)
+    execution_count = len(process_logs)
+    incident_count = int(safe_float(risk_score.get("open_incidents", demo["open_incidents"])))
 
-            <div class="hero-brand">
-                🧬 EXL ENTERPRISE PROCESS INTELLIGENCE
+    # -------------------------------------------------------------------------
+    # 1. TOP LLM / PROCESS HEADER — intentionally before the Process Genome title
+    # -------------------------------------------------------------------------
+    render_html(f"""
+    <div class="pg-status-panel">
+        <div>
+            <div class="pg-online"><span class="pg-online-dot"></span>LLM ONLINE <span style="color:#BBF7D0;font-weight:700;">· Online Demo Mode</span></div>
+            <div class="pg-demo-label">🏛️ {selected_template_meta['industry']} · Enterprise Demo</div>
+            <div class="pg-demo-title">{selected_template_meta['title']}</div>
+            <div class="pg-meta">SOP {selected_template_meta['sop_id']} · {selected_template_meta['version']}</div>
+            <div class="pg-tech">
+                🧬 <b>Embeddings:</b> {selected_template_meta['embeddings']}<br>
+                🗄️ <b>Vector Store:</b> {selected_template_meta['vector_store']}
             </div>
-
-            <div class="hero-title">
-                Process Genome AI
-            </div>
-
-            <div class="hero-subtitle">
-                Enterprise SOP Intelligence & Autonomous Process
-                Governance Platform for intelligent, compliant and
-                continuously evolving operations.
-            </div>
-
-            <div class="hero-metrics">
-
-                <div class="hero-chip chip-teal">
-                    🟢 LIVE PROCESS MONITORING
-                </div>
-
-                <div class="hero-chip chip-purple">
-                    ◉ AI-DRIVEN SOP EVOLUTION
-                </div>
-
-                <div class="hero-chip chip-orange">
-                    ⚡ PREDICTIVE RISK INTELLIGENCE
-                </div>
-
-                <div class="hero-chip chip-pink">
-                    🛡 HUMAN GOVERNANCE
-                </div>
-
-                <div class="hero-chip chip-blue">
-                    ◈ AUDIT-READY INTELLIGENCE
-                </div>
-
-            </div>
-
         </div>
-        """
-    )
+        <div class="pg-status-right">
+            <div class="pg-brain">🧠</div>
+            <div class="pg-online-large">🟢 LLM ONLINE</div>
+            <div class="pg-ready">TEMPLATE · Backend Ready</div>
+        </div>
+    </div>
+    """)
 
+    # -------------------------------------------------------------------------
+    # 2. Application title
+    # -------------------------------------------------------------------------
+    render_html("""
+    <div class="pg-title-row">
+        <div class="pg-dna">🧬</div>
+        <div>
+            <div class="pg-main-title">Process Genome AI 3D</div>
+            <div class="pg-main-subtitle">EXL ENTERPRISE PROCESS INTELLIGENCE &amp; DYNAMIC SOP GOVERNANCE</div>
+        </div>
+    </div>
+    """)
 
-    st.markdown(
-        '<div class="section-label'>
-        'ENTERPRISE COMMAND CENTER'
-        '</div>',
-        unsafe_allow_html=True,
-    )
+    # -------------------------------------------------------------------------
+    # 3. Banking / SOP summary card
+    # -------------------------------------------------------------------------
+    render_html(f"""
+    <div class="pg-demo-card">
+        <div style="color:#2DD4BF;font-size:10px;font-weight:900;letter-spacing:1.7px;">{selected_template_meta['industry'].upper()} · ENTERPRISE DEMO</div>
+        <div style="color:#F8FAFC;font-size:24px;font-weight:950;margin-top:18px;">{selected_template_meta['title']}</div>
+        <div class="pg-meta">SOP {selected_template_meta['sop_id']} · {selected_template_meta['version']}</div>
+        <div class="pg-tech" style="margin-top:22px;">
+            <b>Embeddings:</b> {selected_template_meta['embeddings']}<br>
+            <b>Vector Store:</b> {selected_template_meta['vector_store']}
+        </div>
+        <div class="pg-bank" aria-hidden="true">
+            <div class="roof"></div><div class="base"></div>
+            <div class="cols"><div class="col"></div><div class="col"></div><div class="col"></div><div class="col"></div></div>
+            <div class="ground"></div>
+        </div>
+    </div>
+    """)
 
+    # -------------------------------------------------------------------------
+    # 4. Large interactive 3D hero
+    # -------------------------------------------------------------------------
+    render_html("""
+    <div class="pg-hero">
+        <div class="pg-hero-content">
+            <div class="pg-eyebrow">🧬 EXL ENTERPRISE PROCESS INTELLIGENCE</div>
+            <div class="pg-hero-title">Process Genome AI<span>3D</span></div>
+            <div class="pg-hero-copy">Enterprise SOP Intelligence &amp;<br>Autonomous Process Governance</div>
+        </div>
+        <div style="position:absolute;right:9%;bottom:8%;z-index:2;color:#5EEAD4;font-size:54px;filter:drop-shadow(0 0 22px rgba(45,212,191,.45));">▰</div>
+        <div style="position:absolute;right:14%;bottom:18%;z-index:2;color:#A78BFA;font-size:46px;filter:drop-shadow(0 0 18px rgba(167,139,250,.55));">▰</div>
+        <div style="position:absolute;right:24%;bottom:12%;z-index:2;color:#FB923C;font-size:32px;filter:drop-shadow(0 0 15px rgba(251,146,60,.55));">▰</div>
+    </div>
+    """)
+
+    # Interactive button opens the existing Process Genome Explorer feature.
+    _, explore_col, _ = st.columns([1, 1.4, 1])
+    with explore_col:
+        if st.button("↗  Explore 3D Process Landscape", key="pg_explore_3d", use_container_width=True, type="primary"):
+            st.session_state.active_page = "🧬 Process Genome Explorer"
+            st.rerun()
+
+    # -------------------------------------------------------------------------
+    # 5. Screenshot-style KPI row
+    # -------------------------------------------------------------------------
+    render_html(f"""
+    <div class="pg-kpis">
+        <div class="pg-kpi">
+            <div class="pg-kpi-icon pg-teal">▥</div>
+            <div class="pg-kpi-label">Process Risk Score</div>
+            <div class="pg-kpi-value pg-orange">{risk_value:.1f}</div>
+            <div class="pg-kpi-note pg-orange">High</div>
+        </div>
+        <div class="pg-kpi">
+            <div class="pg-kpi-icon pg-purple">▤</div>
+            <div class="pg-kpi-label">Active SOP Genes</div>
+            <div class="pg-kpi-value pg-purple">{active_genes}</div>
+            <div class="pg-kpi-note pg-purple">Monitored</div>
+        </div>
+        <div class="pg-kpi">
+            <div class="pg-kpi-icon pg-teal">⌁</div>
+            <div class="pg-kpi-label">Executions Logged</div>
+            <div class="pg-kpi-value pg-teal">{execution_count:,}</div>
+            <div class="pg-kpi-note" style="color:#CBD5E1;">Last 30 Days</div>
+        </div>
+        <div class="pg-kpi">
+            <div class="pg-kpi-icon pg-orange">⚠</div>
+            <div class="pg-kpi-label">Open Incidents</div>
+            <div class="pg-kpi-value pg-orange">{incident_count}</div>
+            <div class="pg-kpi-note pg-orange">Needs Attention</div>
+        </div>
+    </div>
+    """)
+
+    # -------------------------------------------------------------------------
+    # Existing interactive command-center analytics remain below the new UI.
+    # -------------------------------------------------------------------------
+    st.markdown('<div class="section-label">ENTERPRISE COMMAND CENTER</div>', unsafe_allow_html=True)
     st.markdown("## Explore Process Intelligence")
     st.caption("Select a feature to open its full workspace.")
     for row_start in range(0, len(PAGES), 4):
         feature_columns = st.columns(4)
         for feature_column, feature in zip(feature_columns, PAGES[row_start:row_start + 4]):
             with feature_column:
-                st.button(
-                    feature,
-                    key=f"feature_button_{feature}",
-                    use_container_width=True,
-                    on_click=open_feature,
-                    args=(feature,),
-                )
+                st.button(feature, key=f"feature_button_{feature}", use_container_width=True, on_click=open_feature, args=(feature,))
                 st.caption(FEATURE_DESCRIPTIONS[feature])
 
-
-    st.markdown(
-        "## Executive Process Health"
-    )
+    st.markdown("## Executive Process Health")
     st.markdown("## 💰 Executive ROI Dashboard")
 
-    # demo metrics based on selected SOP
-    demo = get_demo_values(selected_template_name)
-
     r1, r2, r3, r4 = st.columns(4)
+    r1.metric("Potential Annual Savings", f"${demo['annual_savings_m']:.1f}M", "+18%")
+    r2.metric("FTE Hours Saved", f"{int(demo['executions_logged'] // 10):,} hrs", "+4,200")
+    r3.metric("Compliance Risk Reduction", f"{demo['compliance_pct']}%", "+11%")
+    r4.metric("SLA Improvement", f"{10 + (demo['compliance_pct'] % 10)}%", "+9%")
 
-    r1.metric(
-        "Potential Annual Savings",
-        f"${demo['annual_savings_m']:.1f}M",
-        "+18%"
-    )
-
-    r2.metric(
-        "FTE Hours Saved",
-        f"{int(demo['executions_logged'] // 10):,} hrs",
-        "+4,200"
-    )
-
-    r3.metric(
-        "Compliance Risk Reduction",
-        f"{demo['compliance_pct']}%",
-        "+11%"
-    )
-
-    r4.metric(
-        "SLA Improvement",
-        f"{10 + (demo['compliance_pct'] % 10)}%",
-        "+9%"
-    )
-
-    st.info(
-        """
+    st.info("""
     Business Impact Model
 
     • 300 employees
@@ -2140,33 +2206,15 @@ if page == "🏠 Command Center":
     • Average search time reduced from 15 mins to 20 sec
     • Annual productivity gain > 18,000 hours
     • Estimated cost savings > $2.8M/year
-    """
-    )
+    """)
     st.markdown("## 🧬 Process Genome Score™")
 
     g1, g2, g3, g4 = st.columns(4)
-
-    g1.metric(
-        "Compliance Score",
-        f"{demo['compliance_pct']}"
-    )
-
-    g2.metric(
-        "Efficiency Score",
-        f"{min(99, 70 + int(demo['active_sop_genes']/2))}"
-    )
-
-    g3.metric(
-        "Risk Score",
-        f"{int(demo['process_risk_score'])}"
-    )
-
-    g4.metric(
-        "Genome Score™",
-        f"{int(50 + demo['process_risk_score'] / 2)}/100"
-    )
-    st.success(
-        """
+    g1.metric("Compliance Score", f"{demo['compliance_pct']}")
+    g2.metric("Efficiency Score", f"{min(99, 70 + int(demo['active_sop_genes']/2))}")
+    g3.metric("Risk Score", f"{int(demo['process_risk_score'])}")
+    g4.metric("Genome Score™", f"{int(50 + demo['process_risk_score'] / 2)}/100")
+    st.success("""
     Process Genome Score™ combines:
 
     • Compliance Adherence
@@ -2175,423 +2223,60 @@ if page == "🏠 Command Center":
     • Process Stability
 
     into a single enterprise process health metric.
-    """
-    )
+    """)
 
     k1, k2, k3, k4, k5, k6 = st.columns(6)
-    k1.metric(
-            "Process Risk",
-            f"{int(demo['process_risk_score'])}/100",
-            "Elevated",
-        )
+    k1.metric("Process Risk", f"{int(demo['process_risk_score'])}/100", "Elevated")
+    k2.metric("Active SOPs", f"{demo['active_sop_genes']}", "+6")
+    k3.metric("AI Agents", "12", "+2")
+    k4.metric("Pending Reviews", sum(1 for value in st.session_state.mutation_decisions.values() if value == "Pending Review"))
+    k5.metric("Compliance", f"{demo['compliance_pct']}%", "+4%")
+    k6.metric("Live Processes", f"{demo['processes_monitored']}")
 
-    k2.metric(
-            "Active SOPs",
-            f"{demo['active_sop_genes']}",
-            "+6",
-        )
-
-    k3.metric(
-            "AI Agents",
-            "12",
-            "+2",
-        )
-
-    k4.metric(
-            "Pending Reviews",
-            sum(
-                1
-                for value
-                in st.session_state.mutation_decisions.values()
-                if value == "Pending Review"
-            ),
-        )
-
-    k5.metric(
-            "Compliance",
-            f"{demo['compliance_pct']}%",
-            "+4%",
-        )
-
-    k6.metric(
-            "Live Processes",
-            f"{demo['processes_monitored']}",
-        )
-
-
-    st.markdown("")
-
-
-    st.markdown(
-            "### 🧠 AI Executive Insights"
-        )
-
+    st.markdown("### 🧠 AI Executive Insights")
     ai1, ai2, ai3 = st.columns(3)
-
     with ai1:
-        render_html(
-                """
-            <div class="executive-card teal">
-
-                    <div class="executive-icon">
-                        📈
-                    </div>
-
-                    <div class="executive-title">
-                        Drift Acceleration
-                    </div>
-
-                    <div class="executive-text">
-                        Loan Underwriting SOP drift increased by
-                        <b style="color:#5EEAD4;">14%</b>
-                        over the last two weeks.
-                    </div>
-
-                </div>
-                """
-            )
-
+        render_html("""
+        <div class="executive-card teal"><div class="executive-icon">📈</div><div class="executive-title">Drift Acceleration</div><div class="executive-text">Loan Underwriting SOP drift increased by <b style="color:#5EEAD4;">14%</b> over the last two weeks.</div></div>
+        """)
     with ai2:
-        render_html(
-            """
-            <div class="executive-card purple">
-
-                <div class="executive-icon">
-                    ⚠️
-                </div>
-
-                <div class="executive-title">
-                    Risk Concentration
-                </div>
-
-                <div class="executive-text">
-                    Fraud Screening contributes approximately
-                    <b style="color:#C4B5FD;">33%</b>
-                    of total process risk.
-                </div>
-
-            </div>
-            """
-        )
-
+        render_html("""
+        <div class="executive-card purple"><div class="executive-icon">⚠️</div><div class="executive-title">Risk Concentration</div><div class="executive-text">Fraud Screening contributes approximately <b style="color:#C4B5FD;">33%</b> of total process risk.</div></div>
+        """)
     with ai3:
-        render_html(
-            """
-            <div class="executive-card pink">
+        render_html("""
+        <div class="executive-card pink"><div class="executive-icon">🚀</div><div class="executive-title">AI Recommendation</div><div class="executive-text">SOP Version <b style="color:#FDBA74;">3.3</b> is recommended for human approval.</div></div>
+        """)
 
-                <div class="executive-icon">
-                    🚀
-                </div>
-
-                <div class="executive-title">
-                    AI Recommendation
-                </div>
-
-                <div class="executive-text">
-                    SOP Version
-                    <b style="color:#FDBA74;">3.3</b>
-                    is recommended for human approval.
-                </div>
-
-            </div>
-            """
-        )
-
-
-    st.markdown("")
-
-    c1, c2, c3, c4, c5 = st.columns(5)
-
-    c1.metric(
-        "Process Risk Score",
-        f"{safe_float(risk_score.get('composite_score',0)):.0f}/100",
-    )
-
-    c2.metric(
-        "Active SOP Genes",
-        len(genome.genes),
-    )
-
-    c3.metric(
-        "Executions Logged",
-        f"{len(process_logs):,}",
-    )
-
-    c4.metric(
-        "Open Risk Incidents",
-        int(
-            safe_float(
-                risk_score.get(
-                    "open_incidents",
-                    0,
-                )
-            )
-        ),
-    )
-
-    critical_steps = 0
-
-    if (
-        drift_df is not None
-        and not drift_df.empty
-        and "drift_band" in drift_df.columns
-    ):
-
-        critical_steps = len(
-            drift_df[
-                drift_df["drift_band"]
-                == "Critical"
-            ]
-        )
-
-
-    c5.metric(
-        "Critical Drift Steps",
-        critical_steps,
-    )
-
-
-    st.markdown("---")
-
-
-    left, right = st.columns(
-        [1.5, 1]
-    )
-
-
+    st.markdown("### 📊 Process Drift Intelligence")
+    left, right = st.columns([1.5, 1])
     with left:
-
-        st.markdown(
-            "### 📊 Process Drift Intelligence"
-        )
-
-
         if drift_df is not None and not drift_df.empty:
-
-            fig = px.bar(
-                drift_df,
-                x="drift_severity_index",
-                y="step_name",
-                orientation="h",
-                color="drift_band",
-                color_discrete_map={
-                    "Critical": RED,
-                    "High": ORANGE,
-                    "Moderate": YELLOW,
-                    "Stable": GREEN,
-                },
-            )
-
-
-            fig.update_layout(
-                height=470,
-                template="plotly_dark",
-                paper_bgcolor="rgba(0,0,0,0)",
-                plot_bgcolor="rgba(15,23,42,.55)",
-                font=dict(
-                    color="#CBD5E1"
-                ),
-                yaxis=dict(
-                    categoryorder="total ascending"
-                ),
-                margin=dict(
-                    l=10,
-                    r=10,
-                    t=20,
-                    b=10,
-                ),
-            )
-
-
-            st.plotly_chart(
-                fig,
-                use_container_width=True,
-            )
-
-
+            fig = px.bar(drift_df, x="drift_severity_index", y="step_name", orientation="h", color="drift_band", color_discrete_map={"Critical": RED, "High": ORANGE, "Moderate": YELLOW, "Stable": GREEN})
+            fig.update_layout(height=470, template="plotly_dark", paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(15,23,42,.55)", font=dict(color="#CBD5E1"), yaxis=dict(categoryorder="total ascending"), margin=dict(l=10,r=10,t=20,b=10))
+            st.plotly_chart(fig, use_container_width=True)
     with right:
-
-        st.markdown(
-            "### 🎯 Process Risk Composition"
-        )
-
-
-        fig2 = go.Figure(
-            go.Indicator(
-                mode="gauge+number",
-                value=safe_float(
-                    risk_score.get("composite_score", 0)
-                ),
-                title={
-                    "text": "Enterprise Risk"
-                },
-                gauge={
-                    "axis": {
-                        "range": [0, 100]
-                    },
-                    "bar": {"color": ORANGE},
-                    "steps": [
-                        {"range": [0, 25], "color": "#064E3B"},
-                        {"range": [25, 50], "color": "#713F12"},
-                        {"range": [50, 75], "color": "#7C2D12"},
-                        {"range": [75, 100], "color": "#7F1D1D"},
-                    ],
-                },
-            )
-        )
-
-
-        fig2.update_layout(
-            height=280,
-            template="plotly_dark",
-            paper_bgcolor="rgba(0,0,0,0)",
-            margin=dict(
-                l=20,
-                r=20,
-                t=40,
-                b=10,
-            ),
-        )
-
-
-        st.plotly_chart(
-            fig2,
-            use_container_width=True,
-        )
-
-        st.markdown(
-            "### 🧩 Deviation Breakdown"
-        )
-
-
+        fig2 = go.Figure(go.Indicator(mode="gauge+number", value=risk_value, title={"text":"Enterprise Risk"}, gauge={"axis":{"range":[0,100]},"bar":{"color":ORANGE},"steps":[{"range":[0,25],"color":"#064E3B"},{"range":[25,50],"color":"#713F12"},{"range":[50,75],"color":"#7C2D12"},{"range":[75,100],"color":"#7F1D1D"}]}))
+        fig2.update_layout(height=280, template="plotly_dark", paper_bgcolor="rgba(0,0,0,0)", margin=dict(l=20,r=20,t=40,b=10))
+        st.plotly_chart(fig2, use_container_width=True)
         if deviation_breakdown is not None and not deviation_breakdown.empty:
+            fig3 = px.pie(deviation_breakdown, names="deviation_type", values="count", hole=.55, color_discrete_sequence=[PRIMARY,PURPLE,PINK,BLUE,ORANGE])
+            fig3.update_layout(height=280, template="plotly_dark", paper_bgcolor="rgba(0,0,0,0)", margin=dict(l=10,r=10,t=10,b=10))
+            st.plotly_chart(fig3, use_container_width=True)
 
-            fig3 = px.pie(
-                deviation_breakdown,
-                names="deviation_type",
-                values="count",
-                hole=0.55,
-                color_discrete_sequence=[
-                    PRIMARY,
-                    PURPLE,
-                    PINK,
-                    BLUE,
-                    ORANGE,
-                ],
-            )
+    st.markdown("### 📈 Process Deviation Trend")
+    dynamic_trend = build_dynamic_trend(trend_df)
+    if dynamic_trend is not None and not dynamic_trend.empty:
+        fig4 = px.area(dynamic_trend, x="timestamp", y="deviation_rate_pct")
+        fig4.update_traces(line_color=ORANGE, fillcolor="rgba(249,115,22,.18)")
+        fig4.update_layout(height=300, template="plotly_dark", paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(15,23,42,.55)", margin=dict(l=10,r=10,t=10,b=10))
+        st.plotly_chart(fig4, use_container_width=True)
 
-
-            fig3.update_layout(
-                height=280,
-                template="plotly_dark",
-                paper_bgcolor="rgba(0,0,0,0)",
-                margin=dict(
-                    l=10,
-                    r=10,
-                    t=10,
-                    b=10,
-                ),
-            )
-
-
-            st.plotly_chart(
-                fig3,
-                use_container_width=True,
-            )
-
-
-    st.markdown(
-        "### 📈 Process Deviation Trend"
-    )
-
-
-    dynamic_trend = build_dynamic_trend(
-        trend_df
-    )
-
-
-    if (
-        dynamic_trend is not None
-        and not dynamic_trend.empty
-    ):
-
-        fig4 = px.area(
-            dynamic_trend,
-            x="timestamp",
-            y="deviation_rate_pct",
-        )
-
-
-        fig4.update_traces(
-            line_color=ORANGE,
-            fillcolor="rgba(249,115,22,.18)",
-        )
-
-
-        fig4.update_layout(
-            height=300,
-            template="plotly_dark",
-            paper_bgcolor="rgba(0,0,0,0)",
-            plot_bgcolor="rgba(15,23,42,.55)",
-            margin=dict(
-                l=10,
-                r=10,
-                t=10,
-                b=10,
-            ),
-        )
-
-
-        st.plotly_chart(
-            fig4,
-            use_container_width=True,
-        )
-
-
-    st.markdown(
-        "### 🎯 AI-Ranked Enterprise Risk Drivers"
-    )
-
-
-    driver_columns = [
-        "step_name",
-        "drift_severity_index",
-        "incident_count",
-        "open_count",
-        "composite_driver_score",
-    ]
-
-
-    available_columns = [
-        c
-        for c in driver_columns
-        if c in risk_drivers.columns
-    ]
-
-
+    st.markdown("### 🎯 AI-Ranked Enterprise Risk Drivers")
+    driver_columns = ["step_name","drift_severity_index","incident_count","open_count","composite_driver_score"]
+    available_columns = [c for c in driver_columns if c in risk_drivers.columns]
     if available_columns:
-
-        st.dataframe(
-            risk_drivers[
-                available_columns
-            ].rename(
-                columns={
-                    "step_name":
-                        "Process Step",
-                    "drift_severity_index":
-                        "Drift Index",
-                    "incident_count":
-                        "Risk Incidents",
-                    "open_count":
-                        "Open Incidents",
-                    "composite_driver_score":
-                        "AI Risk Score",
-                }
-            ),
-            use_container_width=True,
-            hide_index=True,
-        )
-
+        st.dataframe(risk_drivers[available_columns].rename(columns={"step_name":"Process Step","drift_severity_index":"Drift Index","incident_count":"Risk Incidents","open_count":"Open Incidents","composite_driver_score":"AI Risk Score"}), use_container_width=True, hide_index=True)
 
 # =============================================================================
 # PROCESS GENOME EXPLORER
