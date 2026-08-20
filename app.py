@@ -1159,14 +1159,7 @@ def get_llm_status(rag):
             "icon": "🟢",
         }
 
-    return {
-        "online": False,
-        "label": "OFFLINE",
-        "detail": "No LLM Connected",
-        "color": ORANGE,
-        "icon": "🟠",
-    }
-
+    
 
 def render_llm_indicator(rag):
 
